@@ -3,6 +3,7 @@
   import { onMount } from "svelte";
   import { mount, unmount } from "svelte";
   import CodeBlock from "$lib/components/CodeBlock.svelte";
+  import TableOfContents from "$lib/components/TableOfContents.svelte";
 
   let { data }: { data: PageData } = $props();
   let articleElement: HTMLElement;
@@ -54,6 +55,8 @@
     crossorigin="anonymous"
   />
 </svelte:head>
+
+<TableOfContents />
 
 <div class="mx-auto mt-12 max-w-3xl px-4 py-8">
   <article
