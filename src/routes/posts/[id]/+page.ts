@@ -3,6 +3,23 @@ import { marked } from "marked";
 import markedKatex from "marked-katex-extension";
 import { error } from "@sveltejs/kit";
 
+// 커스텀 렌더러 설정
+const renderer = new marked.Renderer();
+let codeBlockIndex = 0;
+
+renderer.code = ({ text, lang }) => {
+  const language = lang || "plaintext";
+  const index = codeBlockIndex++;
+  const escapedCode = text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+  return `<div class="code-block-wrapper" data-code-index="${index}" data-language="${language}" data-code="${escapedCode}"></div>`;
+};
+
 // KaTeX 확장 설정
 marked.use(
   markedKatex({
@@ -11,10 +28,15 @@ marked.use(
   }),
 );
 
+marked.use({ renderer });
+
 export const load: PageLoad = async ({ params }) => {
   const { id } = params;
 
   try {
+    // 코드 블록 인덱스 초기화
+    codeBlockIndex = 0;
+
     // 마크다운 파일 동적으로 가져오기
     const markdownModule = await import(
       `../../../lib/markdown/${id}/content.md?raw`

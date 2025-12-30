@@ -33,6 +33,7 @@
 		"vite": "^7.2.6"
 	},
 	"dependencies": {
+		"highlight.js": "^11.11.1",
 		"katex": "^0.16.27",
 		"marked": "^17.0.1",
 		"marked-katex-extension": "^5.1.6"
