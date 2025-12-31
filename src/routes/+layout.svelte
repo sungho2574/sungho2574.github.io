@@ -43,7 +43,7 @@
 </svelte:head>
 
 <nav
-  class="fixed top-0 right-0 left-0 z-50 flex items-center justify-between border-b border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-900"
+  class="fixed top-0 right-0 left-0 z-50 flex items-center justify-between border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-900"
 >
   <div>
     <a
@@ -67,7 +67,7 @@
     >
       <Github class="h-5 w-5" />
     </a>
-    <button
+    <!-- <button
       onclick={toggleTheme}
       class="rounded-md p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
       aria-label="테마 전환"
@@ -79,7 +79,7 @@
           <Moon class="h-5 w-5" />
         {/if}
       </div>
-    </button>
+    </button> -->
   </div>
 </nav>
 
@@ -89,7 +89,7 @@
   <p class="text-sm text-neutral-500 dark:text-neutral-400">
     &copy; 2025 My Tech Blog. All rights reserved.
   </p>
-  <p class="text-sm text-neutral-500 dark:text-neutral-400">
+  <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
     Made with SvelteKit
   </p>
 </footer>
