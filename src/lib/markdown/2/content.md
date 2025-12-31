@@ -15,9 +15,7 @@ Svelte 공식 문서를 통해 공부하면서 중요한 내용을 까먹지 않
 ## Quick Start
 
 ```bash
-mkdir svelte-first-project
-cd svelte-first-project
-npx sv create .
+npx sv create # 현재 경로를 svelte 프로젝트 경로로 사용
 ```
 
 ## Basic Svelte
