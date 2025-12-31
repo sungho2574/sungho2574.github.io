@@ -1,0 +1,1 @@
+import{j as o,k as u,H as p,m as t,n as _,C as g,o as i,s as l,p as n,q as m}from"./DrytiiX2.js";function E(d,r){let s=null,f=t;var a;if(t){s=m;for(var e=_(document.head);e!==null&&(e.nodeType!==g||e.data!==d);)e=i(e);if(e===null)l(!1);else{var y=i(e);e.remove(),n(y)}}t||(a=document.head.appendChild(o()));try{u(()=>r(a),p)}finally{f&&(l(!0),n(s))}}export{E as h};
