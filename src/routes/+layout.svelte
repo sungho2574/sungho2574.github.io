@@ -1,9 +1,35 @@
 <script lang="ts">
   import "./layout.css";
   import favicon from "$lib/assets/favicon.svg";
-  import { Github } from "@lucide/svelte";
+  import { Moon, Sun, Github } from "@lucide/svelte";
+  import { onMount } from "svelte";
 
   let { children } = $props();
+  let darkMode = $state(false);
+
+  onMount(() => {
+    // 로컬 스토리지에서 테마 설정 불러오기
+    const stored = localStorage.getItem("theme");
+    darkMode =
+      stored === "dark" ||
+      (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    updateTheme();
+  });
+
+  function toggleTheme() {
+    darkMode = !darkMode;
+    updateTheme();
+  }
+
+  function updateTheme() {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }
 </script>
 
 <svelte:head>
@@ -41,7 +67,7 @@
     >
       <Github class="h-5 w-5" />
     </a>
-    <!-- <button
+    <button
       onclick={toggleTheme}
       class="rounded-md p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
       aria-label="테마 전환"
@@ -53,7 +79,7 @@
           <Moon class="h-5 w-5" />
         {/if}
       </div>
-    </button> -->
+    </button>
   </div>
 </nav>
 
