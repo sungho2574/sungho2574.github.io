@@ -1,9 +1,22 @@
-import type { PageLoad } from "./$types";
+import type { PageLoad, EntryGenerator } from "./$types";
 import { marked } from "marked";
 import markedKatex from "marked-katex-extension";
 import { error } from "@sveltejs/kit";
 
 export const prerender = true;
+
+export const entries: EntryGenerator = () => {
+  // // Vite의 glob import를 사용하여 모든 마크다운 파일 경로 가져오기
+  // const markdownFiles = import.meta.glob("/src/lib/markdown/*/content*.md");
+
+  // const ids = Object.keys(markdownFiles).map((path) => {
+  //   const idMatch = path.match(/\/markdown\/([^\/]+)\//);
+  //   return { id: idMatch?.[1] || "" };
+  // }).filter(entry => entry.id);
+
+  // return ids;
+  return [{ id: "2" }];
+};
 
 // 커스텀 렌더러 설정
 const renderer = new marked.Renderer();
