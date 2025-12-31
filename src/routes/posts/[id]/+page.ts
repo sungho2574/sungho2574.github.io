@@ -3,6 +3,8 @@ import { marked } from "marked";
 import markedKatex from "marked-katex-extension";
 import { error } from "@sveltejs/kit";
 
+export const prerender = true;
+
 // 커스텀 렌더러 설정
 const renderer = new marked.Renderer();
 let codeBlockIndex = 0;
