@@ -4,6 +4,7 @@
   import { mount, unmount } from "svelte";
   import CodeBlock from "$lib/components/CodeBlock.svelte";
   import TableOfContents from "$lib/components/TableOfContents.svelte";
+  //   import "style.css";
 
   let { data }: { data: PageData } = $props();
   let articleElement: HTMLElement;
@@ -61,7 +62,7 @@
 <div class="mx-auto mt-12 max-w-3xl px-4 py-8">
   <article
     bind:this={articleElement}
-    class="prose prose-neutral dark:prose-invert lg:prose-xl"
+    class="prose prose-neutral dark:prose-invert"
   >
     {@html data.html}
   </article>

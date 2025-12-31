@@ -70,7 +70,7 @@
     class="toc-container fixed top-24 right-8 hidden max-h-[calc(100vh-8rem)] w-64 overflow-y-auto xl:block"
   >
     <div
-      class="rounded-lg border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-900"
+      class="rounded-lg border-neutral-200 p-4 dark:border-neutral-800 dark:bg-neutral-900"
     >
       <h2
         class="mb-4 text-sm font-semibold tracking-wide text-neutral-700 uppercase dark:text-neutral-300"

@@ -30,6 +30,12 @@ marked.use(
 
 marked.use({ renderer });
 
+// frontmatter 제거 함수
+function removeFrontmatter(markdown: string): string {
+  const frontmatterRegex = /^---\n[\s\S]*?\n---\n/;
+  return markdown.replace(frontmatterRegex, "");
+}
+
 export const load: PageLoad = async ({ params }) => {
   const { id } = params;
 
@@ -43,8 +49,11 @@ export const load: PageLoad = async ({ params }) => {
     );
     const markdown = markdownModule.default;
 
+    // frontmatter 제거
+    const content = removeFrontmatter(markdown);
+
     // 마크다운을 HTML로 변환
-    const html = marked(markdown);
+    const html = marked(content);
 
     return {
       html,

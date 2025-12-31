@@ -1,3 +1,11 @@
+---
+title: SvelteKit으로 블로그 만들기
+description: SvelteKit을 사용하여 현대적이고 빠른 블로그를 만드는 방법을 알아봅니다.
+tags: ["Svelte", "Web", "Tutorial"]
+date: 2025-12-30
+readingTime: 5분
+---
+
 # 첫 번째 포스트
 
 이것은 마크다운으로 작성된 첫 번째 블로그 포스트입니다.
